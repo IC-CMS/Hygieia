@@ -52,6 +52,7 @@ jobs:
     steps:
       - checkout    
       # Download and cache dependencies
+      - run: mvn -s .circleci/.circleci.settings.xml test
       - run:
           name: Save test results
           command: |
@@ -59,9 +60,7 @@ jobs:
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/junit/ \;
           when: always
       - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit
+          path: ~/junit/test-results.xml
       #- run: mvn -s .circleci/.circleci.settings.xml test
       #- store_test_results:          
           #path: target/surefire-reports      
