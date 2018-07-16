@@ -7,8 +7,7 @@ jobs:
   package:
     docker:
       # specify the version you desire here
-      #- image: circleci/openjdk:8-jdk
-      - image: circleci/openjdk:8-jdk-node
+      - image: circleci/openjdk:8-jdk
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -34,7 +33,8 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}      
-      - run: mkdir -p /tmp/workspace/ && cp -r target /tmp/workspace && cp Dockerfile /tmp/workspace/target/
+      - run: mkdir target && mv /tmp/workspace/*.jar target/hygieia.jar && mv /tmp/workspace/Dockerfile ./Dockerfile
+      #- run: mkdir -p /tmp/workspace/ && cp -r target /tmp/workspace && cp Dockerfile /tmp/workspace/target/
       - persist_to_workspace:
           root: /tmp/workspace/target
           paths:
