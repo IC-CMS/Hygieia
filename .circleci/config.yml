@@ -59,7 +59,7 @@ jobs:
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/junit/ \;
           when: always
       - store_test_results:
-          path: ~/junit/test-results.xml
+          path: ~/junit/
       #- run: mvn -s .circleci/.circleci.settings.xml test
       #- store_test_results:          
           #path: target/surefire-reports      
