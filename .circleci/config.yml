@@ -51,8 +51,7 @@ jobs:
     steps:
       - checkout    
       # Download and cache dependencies
-      - run: mvn -s .circleci/.circleci.settings.xml test
-      - run: mvn -Dtest=\!DefaultAWSCloudClientTest* package
+      - run: mvn -Dtest=\!DefaultAWSCloudClientTest* -s .circleci/.circleci.settings.xml test
       - run:
           name: Save test results
           command: |
