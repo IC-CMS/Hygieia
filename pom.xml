@@ -183,27 +183,27 @@
         <module>core</module>
         <module>api</module>
         <module>api-audit</module>
-        <module>collectors/feature/rally</module>
+        <!--<module>collectors/feature/rally</module>-->
         <module>collectors/artifact/artifactory</module>
-        <module>collectors/build/bamboo</module>
+        <!--<module>collectors/build/bamboo</module>-->
         <module>collectors/build/jenkins</module>
-        <module>collectors/build/jenkins-cucumber</module>
+        <!--<module>collectors/build/jenkins-cucumber</module>-->
         <module>collectors/build/jenkins-codequality</module>
         <module>collectors/build/sonar</module>
-        <module>collectors/cloud/aws</module>
-        <module>collectors/deploy/udeploy</module>
-        <module>collectors/deploy/xldeploy</module>
+        <!--<module>collectors/cloud/aws</module>-->
+        <!--<module>collectors/deploy/udeploy</module>-->
+        <!--<module>collectors/deploy/xldeploy</module>-->
         <module>collectors/feature/jira</module>
-        <module>collectors/feature/versionone</module>
+        <!--<module>collectors/feature/versionone</module>-->
         <module>collectors/feature/gitlab</module>
         <module>collectors/misc/chat-ops</module>
         <module>collectors/performance/appdynamics</module>
-        <module>collectors/scm/bitbucket</module>
-        <module>collectors/scm/github</module>
-        <module>collectors/scm/github-graphql</module>
+        <!--<module>collectors/scm/bitbucket</module>-->
+        <!--<module>collectors/scm/github</module>-->
+        <!--<module>collectors/scm/github-graphql</module>-->
         <module>collectors/scm/subversion</module>
         <module>collectors/scm/gitlab</module>
-        <module>collectors/cmdb/hpsm</module>
+        <!--<module>collectors/cmdb/hpsm</module>-->
         <module>collectors/library-policy/nexus-iq-collector</module>
         <module>collectors/misc/score</module>
         <module>hygieia-jenkins-plugin</module>
@@ -233,25 +233,25 @@
         <module>api</module>
         <module>api-audit</module>
         <module>collectors/artifact/artifactory</module>
-        <module>collectors/build/bamboo</module>
+        <!--<module>collectors/build/bamboo</module>-->
         <module>collectors/build/jenkins</module>
-        <module>collectors/build/jenkins-cucumber</module>
+        <!--<module>collectors/build/jenkins-cucumber</module>-->
         <module>collectors/build/jenkins-codequality</module>
         <module>collectors/build/sonar</module>
-        <module>collectors/cloud/aws</module>
-        <module>collectors/deploy/udeploy</module>
-        <module>collectors/deploy/xldeploy</module>
+        <!--<module>collectors/cloud/aws</module>-->
+        <!--<module>collectors/deploy/udeploy</module>-->
+        <!--<module>collectors/deploy/xldeploy</module>-->
         <module>collectors/feature/jira</module>
-        <module>collectors/feature/versionone</module>
+        <!--<module>collectors/feature/versionone</module>-->
         <module>collectors/feature/gitlab</module>
         <module>collectors/misc/chat-ops</module>
         <module>collectors/performance/appdynamics</module>
-        <module>collectors/scm/bitbucket</module>
-        <module>collectors/scm/github</module>
-        <module>collectors/scm/github-graphql</module>
+        <!--<module>collectors/scm/bitbucket</module>-->
+        <!--<module>collectors/scm/github</module>-->
+        <!--<module>collectors/scm/github-graphql</module>-->
         <module>collectors/scm/subversion</module>
         <module>collectors/scm/gitlab</module>
-        <module>collectors/cmdb/hpsm</module>
+        <!--<module>collectors/cmdb/hpsm</module>-->
         <module>collectors/library-policy/nexus-iq-collector</module>
         <module>collectors/misc/score</module>
         <module>hygieia-jenkins-plugin</module>
@@ -272,12 +272,11 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>2.2.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
                 <goals>
-                  <goal>jar-no-fork</goal>
+                  <goal>jar</goal>
                 </goals>
               </execution>
             </executions>
@@ -285,10 +284,6 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.9.1</version>
-            <configuration>
-              <additionalparam>-Xdoclint:none</additionalparam>
-            </configuration>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -316,5 +311,4 @@
       </build>
     </profile>
   </profiles>
-
 </project>
